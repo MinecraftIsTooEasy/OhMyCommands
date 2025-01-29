@@ -1,6 +1,6 @@
 package com.github.Debris.OhMyCommands.mixins.client;
 
-import com.github.Debris.OhMyCommands.command.build.BuildHandler;
+import com.github.Debris.OhMyCommands.command.building.BuildingHandler;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,7 +22,7 @@ public class PlayerControllerMPMixin {
     private void flintAxeCancel(int x, int y, int z, EnumFace face, CallbackInfoReturnable<Boolean> cir) {
         if (this.currentGameType.isCreative() && this.mc.thePlayer.getHeldItemStack() != null && this.mc.thePlayer.getHeldItemStack().getItem().itemID == Item.axeFlint.itemID) {
             cir.setReturnValue(false);
-            BuildHandler.getInstance().setPos1(x, y, z);
+            BuildingHandler.getInstance().setPos1(x, y, z);
             this.mc.thePlayer.sendChatToPlayer(ChatMessageComponent.createFromTranslationWithSubstitutions("commands.pos.pos1Set", x, y, z));
         }
     }

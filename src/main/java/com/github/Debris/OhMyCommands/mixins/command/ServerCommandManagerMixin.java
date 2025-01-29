@@ -1,7 +1,7 @@
 package com.github.Debris.OhMyCommands.mixins.command;
 
 import com.github.Debris.OhMyCommands.command.*;
-import com.github.Debris.OhMyCommands.command.build.*;
+import com.github.Debris.OhMyCommands.command.building.*;
 import net.minecraft.CommandHandler;
 import net.minecraft.ServerCommandManager;
 import org.spongepowered.asm.mixin.Mixin;

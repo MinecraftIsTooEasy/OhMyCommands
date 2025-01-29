@@ -1,6 +1,6 @@
 package com.github.Debris.OhMyCommands.mixins.item;
 
-import com.github.Debris.OhMyCommands.command.build.BuildHandler;
+import com.github.Debris.OhMyCommands.command.building.BuildingHandler;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -26,7 +26,7 @@ public abstract class ItemAxeMixin extends ItemTool {
             int x = rc.block_hit_x;
             int y = rc.block_hit_y;
             int z = rc.block_hit_z;
-            BuildHandler.getInstance().setPos2(x, y, z);
+            BuildingHandler.getInstance().setPos2(x, y, z);
             player.sendChatToPlayer(ChatMessageComponent.createFromTranslationWithSubstitutions("commands.pos.pos2Set", x, y, z));
         }
         return false;
