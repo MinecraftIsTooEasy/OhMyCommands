@@ -1,0 +1,75 @@
+commands.fail.emptyHanded=You are empty handed
+
+commands.curse.usage=/curse <player> <add|clear> [curseName]
+commands.curse.clear.notCursed=Target is not cursed
+commands.curse.clear.success=Successfully cleared curse
+commands.curse.add.success=Successfully added curse: %s
+
+commands.damage.damageable=Item can not be damaged
+
+commands.dimension.usage=/dimension <name>
+commands.dimension.success=Successfully teleported to %s
+commands.dimension.duplicateDestination=You are already at %s
+commands.dimension.dimensionNotFound=Dimension not found
+
+commands.dimension.overWorld=overWorld
+commands.dimension.hell=hell
+commands.dimension.underWorld=underWorld
+commands.dimension.end=end
+
+commands.enchant.clear.success=Successfully cleared enchantments
+
+commands.fill.failed=Fill failed
+commands.fill.success=Fill success
+
+commands.forceLoad.usage=/forceLoad <add|clear|get|remove> [x] [y]
+commands.forceLoad.clear=Successfully cleared force load list for dimension %d
+commands.forceLoad.add.success=Successfully force loaded chunk %d, %d for dimension %d
+commands.forceLoad.remove.success=Successfully cancelled chunk %d, %d for dimension %d
+
+commands.homo.usage=/homo [updateType]
+commands.homo.fail.differentBlockID=Different BlockID
+commands.homo.fail.differentMetadata=Different Metadata
+
+commands.locate.usage=/locate <name>
+commands.locate.village.requirement=Villages can generate after the following conditions are met:
+commands.locate.village.ironPickaxe=Craft an iron pickaxe or war hammer (or better)
+commands.locate.village.day=Villages can only generate after day 60
+commands.locate.notFound=Can not find %s within %d blocks
+commands.locate.found=Found %s at %d, ?, %d, tp command is ready at clip board
+
+commands.locateBiome.usage=/locateBiome <name>
+commands.locateBiome.wrongBiomeName=Wrong biome name
+commands.locateBiome.notFound=Can not find %s within %d blocks
+commands.locateBiome.found=Found %s at %d, ?, %d, tp command is ready at clip board
+
+commands.pos.pos1NotSet=Pos1 not set
+commands.pos.pos2NotSet=Pos2 not set
+commands.pos.pos1Set=Pos1 set successfully at %d, %d, %d
+commands.pos.pos2Set=Pos2 set successfully at %d, %d, %d
+
+commands.quality.usage=/quality <quality>
+commands.quality.hasQuality=This item can't have quality
+commands.quality.success=Set the quality as %s
+commands.quality.qualityNotFound=Quality not found
+
+commands.stack.usage=/stack [count] [updateType]
+commands.stack.failed=Stack failed
+commands.stack.success=Successfully stacked %d blocks
+
+commands.set.usage=/set <name> [metadata] [updateType]
+
+commands.setblock.usage=/setblock <x> <y> <z> <blockID> [metadata] [updateType]
+commands.setblock.noChange=Nothing changed
+commands.setblock.success=Set block success
+
+commands.setWorldSpawn.usage=/setSpawn [x] [y] [z]
+commands.setWorldSpawn.duplicate=The position you assigned is already the world's spawn point
+commands.setWorldSpawn.fail=Set world spawn point failed
+commands.setWorldSpawn.success=Successfully set world spawn point to %d, %d, %d
+
+commands.summon.usage=/summon <name> [x] [y] [z]
+commands.summon.success=Summon success
+commands.summon.failed=Summon failed
+
+commands.world.outOfWorld=Out of world

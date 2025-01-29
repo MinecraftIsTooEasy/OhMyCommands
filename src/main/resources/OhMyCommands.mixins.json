@@ -1,0 +1,39 @@
+{
+  "required": true,
+  "package": "com.github.Debris.OhMyCommands.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "target": "DEFAULT",
+  "minVersion": "0.8.3",
+  "mixins": [
+    "client.PlayerControllerMPMixin",
+    "command.CommandBaseMixin",
+    "command.CommandHandlerMixin",
+    "command.ServerCommandManagerMixin",
+    "command.commands.CommandEffectMixin",
+    "command.commands.CommandEnchantMixin",
+    "command.commands.CommandGameModeMixin",
+    "command.commands.CommandGameRuleMixin",
+    "command.commands.CommandGiveMixin",
+    "command.commands.CommandKillMixin",
+    "command.commands.CommandServerOpMixin",
+    "command.commands.CommandServerTpMixin",
+    "command.commands.CommandTimeMixin",
+    "gui.GuiIngameMenuMixin",
+    "item.ItemAxeMixin",
+    "misc.EnumGameTypeMixin",
+    "network.Packet70GameEventMixin",
+    "server.ChunkProviderServerMixin",
+    "server.DedicatedPlayerListMixin",
+    "server.DedicatedServerMixin",
+    "server.ItemInWorldManagerMixin",
+    "server.ServerConfigurationManagerMixin",
+    "world.WorldChunkManagerMixin"
+  ],
+  "client": [
+    "block.BlockCommandBlockMixin"
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

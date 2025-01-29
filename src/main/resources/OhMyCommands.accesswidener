@@ -1,0 +1,7 @@
+accessWidener v2 named
+extendable class net/minecraft/ChunkProviderServer
+accessible field net/minecraft/EntityPlayer username Ljava/lang/String;
+accessible field net/minecraft/EnumGameType id I
+accessible field net/minecraft/EnumDirection dx I
+accessible field net/minecraft/EnumDirection dy I
+accessible field net/minecraft/EnumDirection dz I
