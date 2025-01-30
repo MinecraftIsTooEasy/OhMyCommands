@@ -18,6 +18,7 @@
     "command.commands.CommandServerOpMixin",
     "command.commands.CommandServerTpMixin",
     "command.commands.CommandTimeMixin",
+    "command.commands.CommandWeatherMixin",
     "gui.GuiIngameMenuMixin",
     "item.ItemAxeMixin",
     "misc.EnumGameTypeMixin",
@@ -31,7 +32,6 @@
   ],
   "client": [
     "block.BlockCommandBlockMixin"
-
   ],
   "injectors": {
     "defaultRequire": 1
