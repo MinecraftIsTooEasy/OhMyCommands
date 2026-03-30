@@ -1,13 +1,13 @@
 package moddedmite.ohmycommands.structure;
 
+import moddedmite.ohmycommands.reference.ModReference;
 import moddedmite.ohmycommands.structure.structures.MineshaftStructure;
 import moddedmite.ohmycommands.structure.structures.NetherFortressStructure;
 import moddedmite.ohmycommands.structure.structures.StrongholdStructure;
 import moddedmite.ohmycommands.structure.structures.VillageStructure;
-import moddedmite.ohmycommands.unsafe.CreationStructures;
-import moddedmite.ohmycommands.unsafe.RICStructures;
+import moddedmite.ohmycommands.unsafe.CreationAccess;
+import moddedmite.ohmycommands.unsafe.RICAccess;
 import net.minecraft.BiomeGenBase;
-import net.xiaoyu233.fml.FishModLoader;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -44,12 +44,12 @@ public class Structures {
     static {
         Consumer<Structure> registry = Structures::register;
 
-        if (FishModLoader.hasMod("creation")) {
-            CreationStructures.register(registry);
+        if (ModReference.hasMod(ModReference.CREATION)) {
+            CreationAccess.registerStructure(registry);
         }
 
-        if (FishModLoader.hasMod("rusted_iron_core")) {
-            RICStructures.register(registry);
+        if (ModReference.hasMod(ModReference.RIC)) {
+            RICAccess.registerStructure(registry);
         }
     }
 }

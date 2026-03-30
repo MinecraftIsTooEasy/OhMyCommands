@@ -4,7 +4,8 @@ import moddedmite.ohmycommands.structure.Structure;
 
 import java.util.function.Consumer;
 
-public class RICStructures {
-    public static void register(Consumer<Structure> registry) {
+public class RICAccess {
+    // TODO
+    public static void registerStructure(Consumer<Structure> registry) {
     }
 }
