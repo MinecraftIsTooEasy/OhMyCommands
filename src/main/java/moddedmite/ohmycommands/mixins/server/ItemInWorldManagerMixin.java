@@ -1,6 +1,5 @@
 package moddedmite.ohmycommands.mixins.server;
 
-import moddedmite.ohmycommands.OhMyCommands;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -9,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ItemInWorldManager.class)
+@Mixin(value = ItemInWorldManager.class, priority = 999)
 public class ItemInWorldManagerMixin {
     @Shadow
     private EnumGameType gameType;
@@ -23,13 +22,13 @@ public class ItemInWorldManagerMixin {
      */
     @Overwrite
     public void setGameType(EnumGameType par1EnumGameType) {
-        if (OhMyCommands.debugMode) {
-            System.out.println("setting game type: " + par1EnumGameType.getName());
-        }
-        if (Minecraft.inDevMode() || thisPlayerMP.mcServer.getConfigurationManager().isPlayerOpped(thisPlayerMP.username)) {
-        } else {
-            par1EnumGameType = EnumGameType.SURVIVAL;
-        }
+//        if (OhMyCommands.debugMode) {
+//            System.out.println("setting game type: " + par1EnumGameType.getName());
+//        }
+//        if (Minecraft.inDevMode() || thisPlayerMP.mcServer.getConfigurationManager().isPlayerOpped(thisPlayerMP.username)) {
+//        } else {
+//            par1EnumGameType = EnumGameType.SURVIVAL;
+//        }
         this.gameType = par1EnumGameType;
         par1EnumGameType.configurePlayerCapabilities(this.thisPlayerMP.capabilities);
         this.thisPlayerMP.sendPlayerAbilities();
