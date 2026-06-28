@@ -73,6 +73,22 @@ public class NameIDTranslator {
                 .toArray(String[]::new);
     }
 
+    public static Item getItemByText(ICommandSender iCommandSender, String text) {
+        for (Item item : Item.itemsList) {
+            if (item == null) continue;
+            return item;
+        }
+	    return Item.getItem(parseInt(iCommandSender, text));
+    }
+    
+    public static String[] getStackTexts() {
+        return Arrays.stream(Item.itemsList)
+                .filter(Objects::nonNull)
+                .map(x -> x.getUnlocalizedName().replace(" ", ""))
+                .map(x -> x.substring(5))
+                .toArray(String[]::new);
+    }
+
     public static Potion getEffectIdByText(ICommandSender iCommandSender, String text) {
         for (Potion potionType : Potion.potionTypes) {
             if (potionType == null) continue;

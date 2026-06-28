@@ -73,3 +73,8 @@ commands.summon.success=Summon success
 commands.summon.failed=Summon failed
 
 commands.world.outOfWorld=Out of world
+
+commands.give.usage=/give <player> <item> [amount] [data] [dataTag]
+commands.give.notFound=There is no such item with ID %d
+commands.give.success=Given %s * %d to %s
+commands.give.tagError=Data tag parsing failed: %s
