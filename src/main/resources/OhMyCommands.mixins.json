@@ -5,7 +5,9 @@
   "target": "DEFAULT",
   "minVersion": "0.8.3",
   "mixins": [
+    "block.BlockCommandBlockMixin",
     "client.PlayerControllerMPMixin",
+    "client.screen.GuiIngameMenuMixin",
     "command.CommandBaseMixin",
     "command.CommandHandlerMixin",
     "command.ServerCommandManagerMixin",
@@ -19,8 +21,7 @@
     "command.commands.CommandServerTpMixin",
     "command.commands.CommandTimeMixin",
     "command.commands.CommandWeatherMixin",
-    "gui.GuiIngameMenuMixin",
-    "item.ItemAxeMixin",
+    "item.ItemToolMixin",
     "misc.EnumGameTypeMixin",
     "network.Packet70GameEventMixin",
     "server.ChunkProviderServerMixin",
@@ -29,9 +30,6 @@
     "server.ItemInWorldManagerMixin",
     "server.ServerConfigurationManagerMixin",
     "world.WorldChunkManagerMixin"
-  ],
-  "client": [
-    "block.BlockCommandBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 plugins {
     id 'fml-loom' version '0.1'
     id 'maven-publish'
@@ -7,7 +9,7 @@ version = project.mod_version
 group = project.maven_group
 
 base {
-    archivesName = project.archives_base_name
+        archivesName = project.archives_base_name
 }
 
 repositories {
@@ -34,12 +36,14 @@ dependencies {
     implementation "com.github.MinecraftIsTooEasy:FishModLoader:3.4.2"
 
     // compile needed
-    implementation files("${lib_dir}/MITE-Creation.jar")
+    compileOnly files("${lib_dir}/MITE-Creation.jar")
 
     // useful mods
     implementation "com.github.MinecraftIsTooEasy:ManyLib:2.3.0"
     implementation "com.github.MinecraftIsTooEasy:RustedIronCore:1.5.0"
-    implementation "com.github.MinecraftIsTooEasy:RustedIronCore:1.5.0:sources"
+
+    // for testing
+    localRuntime "com.github.MinecraftIsTooEasy:OMMC:1.4.2"
 }
 
 loom {
@@ -76,7 +80,13 @@ java {
 }
 
 jar {
+    project.
+    project.version += ("-mc" + project.minecraft_version + "-" + new SimpleDateFormat("yyyyMMdd").format(new Date()))
+    inputs.property "archivesName", project.archives_base_name
 
+    from("LICENSE") {
+        rename { "${it}_${inputs.properties.archivesName}" }
+    }
 }
 
 tasks.named('runClient', JavaExec).configure { exec ->

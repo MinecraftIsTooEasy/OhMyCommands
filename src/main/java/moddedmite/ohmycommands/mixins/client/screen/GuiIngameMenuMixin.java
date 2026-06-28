@@ -1,4 +1,4 @@
-package moddedmite.ohmycommands.mixins.gui;
+package moddedmite.ohmycommands.mixins.client.screen;
 
 import moddedmite.ohmycommands.command.building.BuildingHandler;
 import net.minecraft.GuiButton;

@@ -1,21 +1,12 @@
-package moddedmite.ohmycommands.mixins.item;
+package moddedmite.ohmycommands.event;
 
 import moddedmite.ohmycommands.command.building.BuildingHandler;
-import net.minecraft.*;
-import org.spongepowered.asm.mixin.Mixin;
+import net.minecraft.ChatMessageComponent;
+import net.minecraft.EntityPlayer;
+import net.minecraft.RaycastCollision;
 
-@Mixin(ItemAxe.class)
-public abstract class ItemAxeMixin extends ItemTool {
-
-    protected ItemAxeMixin(int par1, Material material) {
-        super(par1, material);
-    }
-
-    @Override
-    public boolean onItemRightClick(EntityPlayer player, float partial_tick, boolean ctrl_is_down) {
-        if (this.itemID != Item.axeFlint.itemID || !player.isPlayerInCreative()) {
-            return super.onItemRightClick(player, partial_tick, ctrl_is_down);
-        }
+public class Hooks {
+    public static boolean useFlintAxe(EntityPlayer player, float partial_tick, boolean ctrl_is_down) {
         if (player.rightClickCancelled()) return false;
         player.getPlayerController().setUseButtonDelay();
         RaycastCollision rc = player.getSelectedObject(partial_tick, false);
@@ -29,6 +20,6 @@ public abstract class ItemAxeMixin extends ItemTool {
             BuildingHandler.getInstance().setPos2(x, y, z);
             player.sendChatToPlayer(ChatMessageComponent.createFromTranslationWithSubstitutions("commands.pos.pos2Set", x, y, z));
         }
-        return false;
+        return true;
     }
 }
