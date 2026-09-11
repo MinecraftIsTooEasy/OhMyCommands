@@ -30,24 +30,21 @@ configurations {
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    fml "com.github.MinecraftIsTooEasy:FishModLoader:3.4.2"
-    implementation "com.github.MinecraftIsTooEasy:FishModLoader:3.4.2"
+    fml "com.github.MinecraftIsTooEasy:FishModLoader:${project.loader_version}"
+    implementation "com.github.MinecraftIsTooEasy:FishModLoader:${project.loader_version}"
 
     // compile needed
     compileOnly files("${lib_dir}/MITE-Creation.jar")
 
-    // useful mods
-    implementation "com.github.MinecraftIsTooEasy:ManyLib:2.3.0"
-    implementation "com.github.MinecraftIsTooEasy:RustedIronCore:1.5.0"
-
     // for testing
-    localRuntime "com.github.MinecraftIsTooEasy:OMMC:1.4.2"
+    localRuntime "com.github.MinecraftIsTooEasy:ManyLib:2.3.0"
+    localRuntime "org.moddedmite:rusted-iron-core:1.5.7"
+    localRuntime "org.moddedmite:ommc:1.4.5"
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/OhMyCommands.accesswidener")
+    accessWidenerPath = file("src/main/resources/ohmycommands.accesswidener")
     mergedMinecraftJar()
     mods {
         "${archives_base_name}" {
@@ -80,8 +77,7 @@ java {
 }
 
 jar {
-    project.
-    project.version += ("-mc" + project.minecraft_version + "-" + new SimpleDateFormat("yyyyMMdd").format(new Date()))
+//    project.version += ("-mc" + project.minecraft_version + "-" + new SimpleDateFormat("yyyyMMdd").format(new Date()))
     inputs.property "archivesName", project.archives_base_name
 
     from("LICENSE") {
@@ -97,14 +93,27 @@ tasks.named('runClient', JavaExec).configure { exec ->
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifactId = "omc"
             from components.java
         }
     }
 
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+
+        // Default Maven Central.
+        maven {
+            name = "ModdedMITE"
+            url = uri("https://maven.limingzxc.top/repository/maven-releases/")
+            credentials {
+                // Read only from gradle.properties (user level, your gradle_home)
+                username = project.findProperty("nexusUsername")
+                password = project.findProperty("nexusPassword")
+            }
+        }
     }
 }

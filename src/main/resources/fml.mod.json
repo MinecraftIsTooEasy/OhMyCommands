@@ -18,8 +18,9 @@
     ]
   },
   "mixins": [
-    "OhMyCommands.mixins.json"
+    "ohmycommands.mixins.json"
   ],
+  "accessWidener": "ohmycommands.accesswidener",
   "custom": {
     "loom:injected_interfaces": {
       "net/minecraft/ChunkProviderServer": [
