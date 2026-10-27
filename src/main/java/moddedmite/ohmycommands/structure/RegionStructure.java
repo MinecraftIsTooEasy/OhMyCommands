@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Random;
 
 public class RegionStructure extends Structure {
+    public static final int LOCATE_RADIUS = 100;
     private final int spacing;
     private final int separation;
     private final int salt;
     private final List<BiomeGenBase> validBiomes;
-    public static final int LOCATE_RADIUS = 100;
 
     public RegionStructure(String key, int spacing, int separation, int salt, List<BiomeGenBase> validBiomes) {
         super(key);

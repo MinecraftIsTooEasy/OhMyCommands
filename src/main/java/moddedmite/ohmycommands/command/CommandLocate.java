@@ -8,6 +8,8 @@ import net.minecraft.*;
 import java.util.List;
 
 public class CommandLocate extends CommandBase {
+    private String[] optionsCache = null;
+
     @Override
     public String getCommandName() {
         return "locate";
@@ -53,8 +55,6 @@ public class CommandLocate extends CommandBase {
         }
         iCommandSender.sendChatToPlayer(ChatMessageComponent.createFromText(info));
     }
-
-    private String[] optionsCache = null;
 
     @Override
     public List<?> addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2ArrayOfStr) {

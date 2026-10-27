@@ -18,16 +18,6 @@ public class ChunkPos extends Vec3i {
         super(vec3i.getX(), vec3i.getY(), vec3i.getZ());
     }
 
-    public RegionPos toRegionPos(int regionSize) {
-        int x = this.getX() < 0 ? this.getX() - regionSize + 1 : this.getX();
-        int z = this.getZ() < 0 ? this.getZ() - regionSize + 1 : this.getZ();
-        return new RegionPos(x / regionSize, z / regionSize, regionSize);
-    }
-
-    public int getChebyshevDistance(ChunkPos pos) {
-        return Math.max(Math.abs(this.x - pos.x), Math.abs(this.z - pos.z));
-    }
-
     public static Stream<ChunkPos> stream(ChunkPos center, int radius) {
         return ChunkPos.stream(new ChunkPos(center.x - radius, center.z - radius), new ChunkPos(center.x + radius, center.z + radius));
     }
@@ -61,5 +51,15 @@ public class ChunkPos extends Vec3i {
                 return true;
             }
         }, false);
+    }
+
+    public RegionPos toRegionPos(int regionSize) {
+        int x = this.getX() < 0 ? this.getX() - regionSize + 1 : this.getX();
+        int z = this.getZ() < 0 ? this.getZ() - regionSize + 1 : this.getZ();
+        return new RegionPos(x / regionSize, z / regionSize, regionSize);
+    }
+
+    public int getChebyshevDistance(ChunkPos pos) {
+        return Math.max(Math.abs(this.x - pos.x), Math.abs(this.z - pos.z));
     }
 }

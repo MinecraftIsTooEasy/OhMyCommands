@@ -1,6 +1,9 @@
 package moddedmite.ohmycommands.mixins.server;
 
-import net.minecraft.*;
+import net.minecraft.EnumGameType;
+import net.minecraft.Item;
+import net.minecraft.ItemInWorldManager;
+import net.minecraft.ServerPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -11,10 +14,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(value = ItemInWorldManager.class, priority = 999)
 public class ItemInWorldManagerMixin {
     @Shadow
+    public ServerPlayer thisPlayerMP;
+    @Shadow
     private EnumGameType gameType;
 
-    @Shadow
-    public ServerPlayer thisPlayerMP;
+    /**
+     * @author
+     * @reason
+     */
+    @Overwrite
+    public EnumGameType getGameType() {
+        return this.gameType;
+    }
 
     /**
      * @author
@@ -32,15 +43,6 @@ public class ItemInWorldManagerMixin {
         this.gameType = par1EnumGameType;
         par1EnumGameType.configurePlayerCapabilities(this.thisPlayerMP.capabilities);
         this.thisPlayerMP.sendPlayerAbilities();
-    }
-
-    /**
-     * @author
-     * @reason
-     */
-    @Overwrite
-    public EnumGameType getGameType() {
-        return this.gameType;
     }
 
     /**

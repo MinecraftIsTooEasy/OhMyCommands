@@ -1,8 +1,8 @@
 package moddedmite.ohmycommands.util;
 
-import moddedmite.ohmycommands.api.BlockPos;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Doubles;
+import moddedmite.ohmycommands.api.BlockPos;
 import net.minecraft.CommandBase;
 import net.minecraft.ICommandSender;
 import net.minecraft.NumberInvalidException;

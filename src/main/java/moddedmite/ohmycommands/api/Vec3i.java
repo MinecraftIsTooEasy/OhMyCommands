@@ -51,22 +51,22 @@ public class Vec3i implements Comparable<Vec3i> {
         return this.x;
     }
 
-    public int getY() {
-        return this.y;
-    }
-
-    public int getZ() {
-        return this.z;
-    }
-
     protected Vec3i setX(int x) {
         this.x = x;
         return this;
     }
 
+    public int getY() {
+        return this.y;
+    }
+
     protected Vec3i setY(int y) {
         this.y = y;
         return this;
+    }
+
+    public int getZ() {
+        return this.z;
     }
 
     protected Vec3i setZ(int z) {

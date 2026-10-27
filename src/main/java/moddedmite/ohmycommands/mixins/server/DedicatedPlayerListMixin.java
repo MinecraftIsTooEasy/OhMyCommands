@@ -17,12 +17,12 @@ public abstract class DedicatedPlayerListMixin extends ServerConfigurationManage
     @Shadow
     private File opsList;
 
-    @Shadow
-    public abstract DedicatedServer getDedicatedServerInstance();
-
     public DedicatedPlayerListMixin(MinecraftServer par1MinecraftServer) {
         super(par1MinecraftServer);
     }
+
+    @Shadow
+    public abstract DedicatedServer getDedicatedServerInstance();
 
     /**
      * @author

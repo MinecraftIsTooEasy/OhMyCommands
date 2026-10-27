@@ -59,7 +59,8 @@ public class CommandForceLoad extends CommandBase {
 
     @Override
     public List addTabCompletionOptions(ICommandSender par1ICommandSender, String[] par2ArrayOfStr) {
-        if (par2ArrayOfStr.length == 1) return getListOfStringsMatchingLastWord(par2ArrayOfStr, "add", "clear", "get", "remove");
+        if (par2ArrayOfStr.length == 1)
+            return getListOfStringsMatchingLastWord(par2ArrayOfStr, "add", "clear", "get", "remove");
         return null;
     }
 }

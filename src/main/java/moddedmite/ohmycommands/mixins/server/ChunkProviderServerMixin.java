@@ -1,7 +1,7 @@
 package moddedmite.ohmycommands.mixins.server;
 
-import moddedmite.ohmycommands.api.OMCChunkProviderServer;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
+import moddedmite.ohmycommands.api.OMCChunkProviderServer;
 import net.minecraft.ChunkProviderServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

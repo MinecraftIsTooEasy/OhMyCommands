@@ -1,7 +1,7 @@
 package moddedmite.ohmycommands.mixins.network;
 
-import moddedmite.ohmycommands.OhMyCommands;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import moddedmite.ohmycommands.OhMyCommands;
 import net.minecraft.Packet70GameEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

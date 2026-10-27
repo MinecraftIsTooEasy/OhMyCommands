@@ -5,7 +5,6 @@ import moddedmite.ohmycommands.util.NBTException;
 import moddedmite.ohmycommands.util.NameIDTranslator;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,7 +17,8 @@ import java.util.List;
 
 @Mixin(CommandGive.class)
 public abstract class CommandGiveMixin extends CommandBase {
-    @Shadow protected abstract String[] getPlayers();
+    @Shadow
+    protected abstract String[] getPlayers();
 
     @Inject(method = "processCommand", at = @At("HEAD"), cancellable = true)
     private void inject(ICommandSender sender, String[] args, CallbackInfo ci) {
@@ -65,8 +65,8 @@ public abstract class CommandGiveMixin extends CommandBase {
             cir.setReturnValue(args.length == 2 ? getListOfStringsFromIterableMatchingLastWord(args, Arrays.asList(NameIDTranslator.getStackTexts())) : Collections.emptyList());
         }
     }
-    
-    
+
+
     public ChatMessageComponent func_151000_E(ItemStack stack) {
         ChatMessageComponent component = (ChatMessageComponent.createFromText("[")).addText(stack.getDisplayName()).addText("]");
         if (stack.getItem() != null) {

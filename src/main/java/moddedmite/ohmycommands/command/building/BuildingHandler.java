@@ -7,10 +7,9 @@ import net.minecraft.*;
 import static net.minecraft.CommandBase.notifyAdmins;
 
 public class BuildingHandler {
+    private static final BuildingHandler INSTANCE = new BuildingHandler();
     private BlockPos pos1 = null;
     private BlockPos pos2 = null;
-
-    private static final BuildingHandler INSTANCE = new BuildingHandler();
 
     public static BuildingHandler getInstance() {
         return INSTANCE;

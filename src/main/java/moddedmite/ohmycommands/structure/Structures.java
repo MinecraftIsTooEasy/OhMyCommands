@@ -27,6 +27,18 @@ public class Structures {
     public static final Structure WITCH_HUT = register(new RegionStructure("witchHut", 40, 20, 14357617, List.of(BiomeGenBase.swampland)));
     public static final Structure NETHER_FORTRESS = register(new NetherFortressStructure("netherFortress", 1, 0, 0, List.of()));
 
+    static {
+        Consumer<Structure> registry = Structures::register;
+
+        if (ModReference.hasMod(ModReference.CREATION)) {
+            CreationAccess.registerStructure(registry);
+        }
+
+        if (ModReference.hasMod(ModReference.RIC)) {
+            RICAccess.registerStructure(registry);
+        }
+    }
+
     public static <T extends Structure> T register(T instance) {
         STRUCTURE_MAP.put(instance.getKey(), instance);
         return instance;
@@ -39,17 +51,5 @@ public class Structures {
 
     public static String[] generateTabCompletions() {
         return STRUCTURE_MAP.keySet().toArray(String[]::new);
-    }
-
-    static {
-        Consumer<Structure> registry = Structures::register;
-
-        if (ModReference.hasMod(ModReference.CREATION)) {
-            CreationAccess.registerStructure(registry);
-        }
-
-        if (ModReference.hasMod(ModReference.RIC)) {
-            RICAccess.registerStructure(registry);
-        }
     }
 }

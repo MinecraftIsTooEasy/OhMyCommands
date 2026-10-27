@@ -78,9 +78,9 @@ public class NameIDTranslator {
             if (item == null) continue;
             return item;
         }
-	    return Item.getItem(parseInt(iCommandSender, text));
+        return Item.getItem(parseInt(iCommandSender, text));
     }
-    
+
     public static String[] getStackTexts() {
         return Arrays.stream(Item.itemsList)
                 .filter(Objects::nonNull)

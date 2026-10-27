@@ -15,7 +15,6 @@ public class CommandQuality extends CommandBase {
         return "commands.quality.usage";
     }
 
-
     public int getRequiredPermissionLevel() {
         return 2;
     }

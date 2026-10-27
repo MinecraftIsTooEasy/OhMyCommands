@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BlockCommandBlockMixin {
     @Inject(method = "onBlockActivated", at = @At("HEAD"), cancellable = true)
     private void canBeUsed(World world, int x, int y, int z, EntityPlayer player, EnumFace face, float dx, float dy, float dz, CallbackInfoReturnable<Boolean> cir) {
-        TileEntityCommandBlock tile_entity = (TileEntityCommandBlock)world.getBlockTileEntity(x, y, z);
+        TileEntityCommandBlock tile_entity = (TileEntityCommandBlock) world.getBlockTileEntity(x, y, z);
         if (tile_entity != null) {
             player.displayGUIEditSign(tile_entity);
         }

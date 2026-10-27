@@ -32,7 +32,7 @@ public class CommandSetWorldSpawn extends CommandBase {
         }
         World entityWorld = iCommandSender.getEntityWorld();
         ChunkCoordinates spawnPointBefore = entityWorld.getSpawnPoint();
-        if (spawnPointBefore.getDistanceSquaredToChunkCoordinates(new ChunkCoordinates(x,y,z)) == 0) {
+        if (spawnPointBefore.getDistanceSquaredToChunkCoordinates(new ChunkCoordinates(x, y, z)) == 0) {
             notifyAdmins(iCommandSender, "commands.setWorldSpawn.duplicate");
             return;
         }
